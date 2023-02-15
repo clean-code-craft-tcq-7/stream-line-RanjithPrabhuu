@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include "send.h"
 #include "file.h"
-#include "test_cases.h"
+#include "test.h"
 
 int main(int argc, char **argv)
 {
