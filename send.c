@@ -33,9 +33,9 @@ void sendSensorValue(void (*fp_sender)(char*))
             sampleValArr[arrayIdx] = sensorValue[arrayIdx][idx];
             arrayIdx++;
         }
-        memset(sensTxt, 0, 50);
-        getValueAsCsv(sensTxt, sampleValArr, MAX_SENSOR);
-        strcat(buffer,sensTxt);
+        memset(sensorTxt, 0, 50);
+        getValueAsCsv(sensorTxt, sampleValArr, MAX_SENSOR);
+        strcat(buffer,sensorTxt);
     }
 
     fp_sender(buffer);
