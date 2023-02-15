@@ -5,7 +5,7 @@
 #include "send.h"
 #include "file.h"
 
-void sendSensorData(void (*fp_sender)(char*))
+void sendSensorValue(void (*fp_sender)(char*))
 {
     char buffer[500];
     char sensorTxt[50];
