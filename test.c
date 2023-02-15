@@ -24,32 +24,32 @@ void test_sensorRead(void)
     // The sensor values will be stored in files with "," separated.
     int sensor1[10];
     int count = 0;
-    const char* file = "TempSensor_Test.txt";
+    const char* file = "temperatureSensorTest.txt";
 
     count = readFile(file, sensor1);
     assert(count == 3);
-    assert(sensor1[0] == 25);
-    assert(sensor1[1] == 26);
-    assert(sensor1[2] == 27);
+    assert(sensor1[0] == 1);
+    assert(sensor1[1] == 2);
+    assert(sensor1[2] == 3);
 }
 
 void test_sender(void)
 {
     memset(test_buff,0,200);
-    strcpy((char*)sensorConfig[0], "TempSensor_Test.txt");
-    strcpy((char*)sensorConfig[1], "SOCSensor_Test.txt");
-    int val[] = {25,30,35};
+    strcpy((char*)sensorConfig[0], "temperatureSensorTest.txt");
+    strcpy((char*)sensorConfig[1], "chargingSensorTest.txt");
+    int val[] = {5,10,20};
 
     // Frame multiple sensor values in csv format
     getValueAsCsv(test_buff, val, 3);
-    assert(strcmp(test_buff,"25, 30, 35\n") == 0);
+    assert(strcmp(test_buff,"5, 10, 20\n") == 0);
 
     //test case to find the min value in an array function
-    assert(getMinInAnArray(val,3) == 25);
-    int val1[] = {50,50,50};
-    assert(getMinInAnArray(val1,3) == 50);
-    int val2[] = {19,10,12};
-    assert(getMinInAnArray(val2,3) == 10);
+    assert(getMinInAnArray(val,3) == 5);
+    int val1[] = {30,30,30};
+    assert(getMinInAnArray(val1,3) == 30);
+    int val2[] = {17,7,27};
+    assert(getMinInAnArray(val2,3) == 7);
 
     // Test case for the csv header
     sendSensorValue(&test_print);
@@ -58,5 +58,5 @@ void test_sender(void)
     // Test the two sensor data output in csv format with 3 sample data
     memset(test_buff,0,200);
     sendSensorValue(&test_print);
-    assert(strcmp(test_buff,"temperature, charging\n25, 10\n26, 11\n27, 12\n") == 0);
+    assert(strcmp(test_buff,"temperature, charging\n1, 20\n2, 21\n3, 23\n") == 0);
 }
