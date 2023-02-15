@@ -26,7 +26,7 @@ void test_sensorRead(void)
     int count = 0;
     const char* file = "temperatureSensor_test.txt";
 
-    count = readFile(file, sensor1);
+    count = read(file, sensor1);
     assert(count == 3);
     assert(sensor1[0] == 1);
     assert(sensor1[1] == 2);
