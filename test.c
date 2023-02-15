@@ -24,7 +24,7 @@ void test_sensorRead(void)
     // The sensor values will be stored in files with "," separated.
     int sensor1[10];
     int count = 0;
-    const char* file = "temperatureSensorTest.txt";
+    const char* file = "temperatureSensor_test.txt";
 
     count = readFile(file, sensor1);
     assert(count == 3);
@@ -36,8 +36,8 @@ void test_sensorRead(void)
 void test_sender(void)
 {
     memset(test_buff,0,200);
-    strcpy((char*)sensorConfig[0], "temperatureSensorTest.txt");
-    strcpy((char*)sensorConfig[1], "chargingSensorTest.txt");
+    strcpy((char*)sensorConfig[0], "temperatureSensor_test.txt");
+    strcpy((char*)sensorConfig[1], "chargingSensor_test.txt");
     int val[] = {5,10,20};
 
     // Frame multiple sensor values in csv format
