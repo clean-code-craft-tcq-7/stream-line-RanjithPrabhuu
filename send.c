@@ -20,7 +20,7 @@ void sendSensorValue(void (*fp_sender)(char*))
 
     while(idx < MAX_SENSOR)
     {
-        samplesCnt[index] = read(sensorConfig[idx], &sensorValue[idx][0]);
+        samplesCnt[idx] = read(sensorConfig[idx], &sensorValue[idx][0]);
         idx++;
     }
     minSampleCnt = getMinInAnArray(samplesCnt, MAX_SENSOR);
