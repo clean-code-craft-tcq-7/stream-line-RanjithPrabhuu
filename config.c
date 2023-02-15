@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "config.h"
 
-char sensorConfig[MAX_SENSOR_SUPPORTED][75] =
+char sensorConfig[MAX_SENSOR][75] =
 {
-                "pressureSensor.txt",
-                "humiditySensor.txt"
+                "chargingSensor.txt",
+                "temperatureSensor.txt"
 };
