@@ -44,7 +44,7 @@ int main(int argc, char **argv)
     }
     else if(strcmp(argv[1],"-r") == 0)
     {
-        sendSensorData(&printToConsole);
+        sendSensorValue(&printToConsole);
     }
     else
     {
