@@ -8,7 +8,7 @@ import csv
 from getStatistics import StatsCalculate
 
 statsCalculator = StatsCalculate()
-with open('Receiver\data.csv', mode ='r')as file:
+with open('data.csv', mode ='r')as file:
     csvFile = csv.reader(file)
     temperatureData = []
     chargingData = []
