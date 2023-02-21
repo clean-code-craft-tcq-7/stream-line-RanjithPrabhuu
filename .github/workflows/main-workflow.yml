@@ -66,8 +66,9 @@ jobs:
         retention-days: 21
 
     - name: run the pipeline from sender to Receiver
-      run: send.exe -r > Receiver\data.csv
-      run: python Receiver\ReceiverMain.py
+      run: |
+        send.exe -r > Receiver\data.csv
+        python Receiver\ReceiverMain.py
 
-    
+      
 
