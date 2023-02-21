@@ -67,7 +67,7 @@ jobs:
 
     - name: run the pipeline from sender to Receiver
       run: |
-        send.exe -r > Receiver\data.csv
+        ./send -r > Receiver\data.csv
         python Receiver\ReceiverMain.py
 
       
